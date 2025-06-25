@@ -1,4 +1,3 @@
-// Importación de clases necesarias para colecciones
 import java.util.ArrayList; // Lista dinámica para las transiciones
 import java.util.HashSet;   // Conjunto para evitar duplicados en estados y alfabeto
 import java.util.List;

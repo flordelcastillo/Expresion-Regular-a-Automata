@@ -1,4 +1,5 @@
 // Importación de clases necesarias para operaciones de entrada/salida y colecciones
+
 import java.io.*;
 import java.util.Map;
 import java.util.HashMap;
