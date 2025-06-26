@@ -4,9 +4,9 @@ import java.util.*;
 
 public class MenuManager {
     private final Map<String, AFN> automatas;
-    private final String ruta_dot = "C:\\Users\\Enekon\\Desktop\\Expresion-Regular-a-Automata-main\\archivos_dot\\";
-    private final String ruta_png = "C:\\Users\\Enekon\\Desktop\\Expresion-Regular-a-Automata-main\\automatas_png\\";
-    private final String filePath = "C:\\Users\\Enekon\\Desktop\\Expresion-Regular-a-Automata-main\\src\\main\\java\\archivo.txt";
+    private final String ruta_dot = "C:\\Users\\tomif\\Downloads\\Expresion-Regular-a-Automata\\archivos_dot\\";
+    private final String ruta_png = "C:\\Users\\tomif\\Downloads\\Expresion-Regular-a-Automata\\automatas_png\\";
+    private final String filePath = "C:\\Users\\tomif\\Downloads\\Expresion-Regular-a-Automata\\src\\main\\java\\archivo.txt";
     private int contadorAFN = 1;
 
     public MenuManager( Map<String, AFN> automatas) {
