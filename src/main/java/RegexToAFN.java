@@ -2,7 +2,7 @@ import java.util.*;
 
 public class RegexToAFN {
 
-    public static AFN build(String regex) throws Exception {
+    public static AFN build(String regex) {
         // Validación con el parser LL(1)
         Lexer lexer = new Lexer(regex);
         ParserExpReg parser = new ParserExpReg(lexer);
@@ -13,6 +13,7 @@ public class RegexToAFN {
 
         // Construir AFN con algoritmo de Thompson
         return buildFromPostfix(postfix);
+
     }
 
     // Convertir a postfijo usando Shunting Yard

@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     static String ruta_dot = "C:\\Users\\tomif\\Documents\\florchu\\ExpresionaAutomata\\archivos_dot\\";
     static String ruta_png = "C:\\Users\\tomif\\Documents\\florchu\\ExpresionaAutomata\\automatas_png\\";
-
+    static String filePath = "C:\\Users\\tomif\\Documents\\florchu\\ExpresionaAutomata\\src\\main\\java\\archivo.txt";
     // Scanner para leer entradas del usuario
     static Scanner scanner = new Scanner(System.in);
 
@@ -25,6 +25,7 @@ public class Main {
             System.out.println("3. Operaciones con AFN");
             System.out.println("4. Convertir AFN a AFD");
             System.out.println("5. Crear AFN desde expresión regular");
+            System.out.println("6. Ejecutar búsqueda tipo grep");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = leerEntero();
@@ -52,6 +53,11 @@ public class Main {
                 case 5:
                     limpiarPantalla();
                     crearAFNDesdeRegex();
+                    pausar();
+                    break;
+                case 6:
+                    limpiarPantalla();
+                    usarGrep();
                     pausar();
                     break;
                 case 0:
@@ -365,6 +371,22 @@ public class Main {
 
         } catch (Exception e) {
             System.out.println("❌ Error: Expresión regular inválida. " + e.getMessage());
+        }
+    }
+
+    public static void usarGrep(){
+        System.out.print("Ingrese expresión regular para grep: ");
+        String grepRegex = scanner.nextLine();
+
+        List<String> resultados = Grep.grepFromFile(grepRegex, filePath);
+
+        System.out.println("\nLíneas que coinciden:");
+        if (resultados.isEmpty()) {
+            System.out.println("(ninguna coincidencia)");
+        } else {
+            for (String linea : resultados) {
+                System.out.println(linea);
+            }
         }
     }
 

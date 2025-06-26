@@ -337,4 +337,10 @@ public class AFN {
 
         return copia;
     }
+    public AFD toAFD() {
+        return new AFD(this); // usás el constructor de AFD que recibe un AFN
+    }
+
+
+
 }

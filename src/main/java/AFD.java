@@ -20,4 +20,46 @@ public class AFD extends AFN {
 
     // Conjunto de símbolos que forman el alfabeto del AFD
     public Set<String> alfabeto = new HashSet<>();
+
+    public boolean accepts(String input) {
+        Estado actual = this.estadoInicial;
+
+        for (int i = 0; i < input.length(); i++) {
+            char simbolo = input.charAt(i);
+            Estado siguiente = null;
+
+            for (Transicion t : this.transiciones) {
+                if (t.getOrigen().equals(actual) && t.getSimbolo().equals(String.valueOf(simbolo))) {
+                    siguiente = t.getDestino();
+                    break;
+                }
+            }
+
+            if (siguiente == null) {
+                return false; // No hay transición válida
+            }
+
+            actual = siguiente;
+        }
+
+        return this.estadosFinales.contains(actual);
+    }
+
+
+
+    public AFD(AFN afn) {
+        AFD afdGenerado = afn.convertirADeterminista();
+        this.estadoInicial = afdGenerado.estadoInicial;
+        this.estados = afdGenerado.estados;
+        this.estadosFinales = afdGenerado.estadosFinales;
+        this.transiciones = afdGenerado.transiciones;
+        this.alfabeto = afdGenerado.alfabeto;
+    }
+    public AFD() {
+        this.estados = new HashSet<>();
+        this.estadosFinales = new HashSet<>();
+        this.transiciones = new ArrayList<>();
+        this.alfabeto = new HashSet<>();
+    }
+
 }

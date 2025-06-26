@@ -23,4 +23,16 @@ public class Transicion {
     public String toString() {
         return desde.id + " -> " + hacia.id + " [" + simbolo + "]";
     }
+    public Estado getOrigen() {
+        return desde;
+    }
+
+    public String getSimbolo() {
+        return simbolo;
+    }
+
+    public Estado getDestino() {
+        return hacia;
+    }
+
 }
