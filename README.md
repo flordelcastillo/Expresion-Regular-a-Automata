@@ -105,6 +105,25 @@ Configurar ruta en `GraphvizExporter.java` si es necesario
 |a*	|Cero o más repeticiones de a|
 |(a&#124;b)*.c	|Cero o más a/b seguidos de c|
 
+## Utilización de la función MiniGrep
+
+Ésta función la utilizamos para buscar que una expresión regular ingresada por el usuario 
+coincida con una expresión regular en un archivo de texto.
+
+### 🔍 ¿Qué hace paso a paso?
+
+- Recibe una expresión regular (regex) y un path de archivo (filePath).
+
+- Compila la expresión regular.
+
+- Lee línea por línea el archivo indicado.
+
+- Para cada línea, verifica si contiene algo que coincida con la regex.
+
+- Si hay coincidencia, la agrega a una lista de resultados.
+
+- Devuelve esa lista.
+
 ## Clases Principales
 
 ### Core 
